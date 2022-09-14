@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+
+"""
+RSA Laboratories states that: for each RSA number n, 
+there exist prime numbers p and q such that
+n = p × q. The problem is to find these two primes, given only n.
+
+This program aims to find the factors of the prime number
+"""
+
+if __name__ == "__main__":
+    from sys import argv, exit
+    if len(argv) != 2:
+        exit(0)
+    fd = open(argv[1], "r")
+    num = (int)(fd.readline())
+    fd.close()
+    for i in range(2, num + 1):
+        if num % i == 0:
+            print(f"{num:d}={num // i:d}*{i:d}")
+            break;
